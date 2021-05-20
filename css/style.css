@@ -47,6 +47,10 @@ main {
 }
 
 
+
+
+/* left section */
+
 .left_header,
 .right_header {
     height: 60px;
@@ -68,3 +72,18 @@ main {
     height: 70px;
     border-top: 1px solid lightgray;
 }
+
+
+/* right section */
+.chat {
+    height: calc(100% - 125px);
+    background-image: url("../img/mine.jpg");
+    background-size: 70%;
+    overflow-y: scroll;
+}
+.chat_write {
+    height: 65px;
+    background-color: #F3EEEA;
+}
+
+

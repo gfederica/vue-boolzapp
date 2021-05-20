@@ -18,16 +18,33 @@
         </div>
         <div class="container" id="root">
             <div class="left_section">
-                <div class="left_header"></div>
+                <!-- topbar sx -->
+                <div class="left_header">
+                    <div class="left user_info">
+                        <div class="header_img"></div>
+                    </div>
+                    <div class="left header_actions"></div>
+                </div>
+                <!-- /topbar sx -->
                 <div class="left_sub_header"></div>
                 <div class="left_search"></div>
                 <!-- sezione contatti -->
                 <div class="contacts">
                 <div class="contact" v-for="contact in contacts">{{contacts.name}}</div>
                 </div>
+                <!-- /sezione contatti -->
             </div>
             <div class="right_section">
-                <div class="right_header"></div>
+                <!-- topbar dx-->
+                <div class="right_header">
+                    <div class="right user_info">
+                        <div class="header_img"></div>
+                    </div>
+                    <div class="right header_actions"></div>
+                </div>
+                <!-- /topbar dx -->
+                <div class="chat"></div>
+                <div class="chat_write"></div>
 
             </div>
 
