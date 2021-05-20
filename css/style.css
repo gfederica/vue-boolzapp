@@ -90,7 +90,7 @@ h3 {
     background-image: url("../img/mine.jpg");
     background-size: 70%;
     overflow-y: scroll;
-    padding: 45px auto 7px;
+    padding: 40px;
 }
 .chat_write {
     height: 65px;
@@ -118,12 +118,13 @@ list-style-type: none;
     font-size: 12px;
     font-weight: bold;
 }
-.right .last_access,
+.last_access,
 .left_sub_header ul li:last-of-type {
     color: #B1B1B1;
     font-size: 10px;
     padding-top: 4px;
 }
+
 .header_actions ul li {
     display: inline-block;
     color: #B1B1B1;
@@ -176,6 +177,7 @@ list-style-type: none;
     width: 15%;
     background-color: white;
     border-right: 1px solid #E5E7E9;
+    cursor: pointer;
 }
 .searchbar input {
     width: 85%;
@@ -203,8 +205,7 @@ list-style-type: none;
     font-size: 14px;
     font-weight: bold;
 }
-.contact ul li:last-of-type,
-.contact p {
+.contact ul li:last-of-type {
     font-size: 10px;
     color: #B1B1B1;
 }
@@ -237,18 +238,37 @@ list-style-type: none;
     color: #6B7376;
     font-size: 20px;
 }
+
 .sent {
     background-color: #D5F9BA;
-    width: 180px;
 }
 .received {
     background-color: white;
 }
+
 .message {
     height: 40px;
-    margin: 10px;
+    width: 250px;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 6px;
 }
 .message p {
     font-size: 12px;
-    
+}
+.message p:last-of-type {
+    color: #B1B1B1;
+    font-size: 9px;
+    text-align: right;
+}
+
+.message_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.message_left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
