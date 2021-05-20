@@ -67,9 +67,13 @@ h3 {
     background-color: #8EDAFC;
 }
 .left_search {
-    height: 30px;
+    height: 40px;
     background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
+
 .contacts {
     height: calc(100% - 150px);
     overflow-y: scroll;
@@ -147,4 +151,65 @@ list-style-type: none;
 .left_sub_header ul li:last-of-type {
     color: #74929C;
     text-decoration: underline;
+}
+
+.searchbar {
+    background-color: white;
+    width: 98%;
+    margin-top: 5px;
+    margin: auto;
+    display: flex;
+    height: 30px;
+    border-radius: 2px;
+    border: 1px solid #E5E7E9;
+}
+
+.searchbar button,
+.searchbar input {
+    margin: 0;
+    padding: 0;
+    color: #B1B1B1;
+    border: none;
+}
+.searchbar button {
+    width: 15%;
+    background-color: white;
+    border-right: 1px solid #E5E7E9;
+}
+.searchbar input {
+    width: 85%;
+    padding: 8px;
+    font-size: 10px;
+}
+
+/* contact section */
+.contacts {
+    position: relative;
+}
+.contact img {
+    height: 50px;
+    border-radius: 50%;
+    padding: 0 8px;
+}
+.contact {
+    display: flex;
+    align-items: center;
+}
+.contact ul {
+    list-style-type: none;
+}
+.contact ul li:first-of-type {
+    font-size: 14px;
+    font-weight: bold;
+}
+.contact ul li:last-of-type,
+.contact p {
+    font-size: 10px;
+    color: #B1B1B1;
+}
+
+.contact p {
+    position: absolute;
+    right: 4px;
+    line-height: 1px;
 }

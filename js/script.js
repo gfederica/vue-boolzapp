@@ -90,6 +90,12 @@ var app = new Vue ({
                 ],
             },
         ]
+    },
+    methods: {
+        getImage: function (index) {
+            let img = "img/avatar";
+            return img + this.contacts[index].avatar + ".jpg";
+        }
     }
 
 }

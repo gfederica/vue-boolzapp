@@ -44,10 +44,24 @@
                         <li>Attiva notifiche desktop</li>
                     </ul>
                 </div>
-                <div class="left_search"></div>
+                <!-- pannello ricerca contatti -->
+                <div class="left_search">
+                    <div class="searchbar">
+                        <button><i class="fas fa-search"></i></button>
+                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+                <!-- /pannello ricerca contatti -->
                 <!-- sezione contatti -->
                 <div class="contacts">
-                <div class="contact" v-for="contact in contacts">{{contacts.name}}</div>
+                <div class="contact" v-for="(contact, index) in contacts">
+                 <img :src="getImage(index)" alt="contact-pic">
+                 <ul>
+                     <li>{{contacts[index].name}}</li>
+                     <li>Lorem ipsum ..</li>
+                 </ul>
+                 <p>Ultimo accesso</p>                 
+                </div>
                 </div>
                 <!-- /sezione contatti -->
             </div>
