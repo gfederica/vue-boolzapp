@@ -75,7 +75,7 @@ h3 {
 }
 
 .contacts {
-    height: calc(100% - 150px);
+    height: calc(100% - 160px);
     overflow-y: scroll;
 }
 .contact {
