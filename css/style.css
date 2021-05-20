@@ -80,7 +80,7 @@ h3 {
 }
 .contact {
     height: 70px;
-    border-top: 1px solid lightgray;
+    border-top: 1px solid #FAFAFA;
 }
 
 
@@ -90,6 +90,7 @@ h3 {
     background-image: url("../img/mine.jpg");
     background-size: 70%;
     overflow-y: scroll;
+    padding: 45px auto 7px;
 }
 .chat_write {
     height: 65px;
@@ -212,4 +213,42 @@ list-style-type: none;
     position: absolute;
     right: 4px;
     line-height: 1px;
+}
+
+/* chat section */
+
+.chat_write {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+.write {
+    width: 85%;
+}
+.write input {
+    width: 100%;
+    padding: 10px 6px;
+    border: none;
+    border-radius: 6px;
+}
+.emoticons,
+.audio {
+    color: #6B7376;
+    font-size: 20px;
+}
+.sent {
+    background-color: #D5F9BA;
+    width: 180px;
+}
+.received {
+    background-color: white;
+}
+.message {
+    height: 40px;
+    margin: 10px;
+}
+.message p {
+    font-size: 12px;
+    
 }
