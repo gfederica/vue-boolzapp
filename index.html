@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.4/dayjs.min.js" integrity="sha512-0fcCRl828lBlrSCa8QJY51mtNqTcHxabaXVLPgw/jPA5Nutujh6CbTdDgRzl9aSPYW/uuE7c4SffFUQFBAy6lg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Boolzapp</title>
 </head>
@@ -54,13 +55,14 @@
                 <!-- /pannello ricerca contatti -->
                 <!-- sezione contatti -->
                 <div class="contacts">
-                <div class="contact" v-for="(contact, index) in contacts">
+                <div class="contact" v-for="(contact, index) in contacts"
+                :class="(index == activeIndex)? 'active' : '' " @click="setActive(index)">
                  <img :src="getImage(index)" alt="contact-pic">
                  <ul>
                      <li>{{contacts[index].name}}</li>
                      <li>{{getLastMessage(contact)}}</li>
                  </ul>
-                 <p class="last_access">Ultimo accesso</p>                 
+                 <p class="last_access">{{getLastAccess(contact)}}</p>                 
                 </div>
                 </div>
                 <!-- /sezione contatti -->
@@ -70,11 +72,11 @@
                 <div class="right_header">
                     <div class="right user_info">
                         <div class="header_img">
-                            <img src="img/avatar_1.jpg" alt="avatar">
+                            <img :src="getImage(activeIndex)" alt="avatar">
                         </div>
                         <ul>
-                            <li class="right contact_name">Michele</li>
-                            <li class="right last_access">Ultimo accesso oggi alle 10/01/2020 16:15:22</li>
+                            <li class="right contact_name">{{contacts[activeIndex].name}}</li>
+                            <li class="right last_access">Ultimo accesso oggi alle {{getLastAccess(contacts[activeIndex])}}</li>
                         </ul>
                     </div>
                     <div class="right header_actions">
@@ -87,21 +89,9 @@
                 </div>
                 <!-- /topbar dx -->
                 <div class="chat">
-                    <div class="message_right">
-                        <div class="message sent">
-                            <p>Hai portato a spasso il cane?</p>
-                            <p>10/01/2020 16:15:22</p>
-                        </div>
-                        <div class="message sent">
-                            <p>Ricordati di dargli da mangiare</p>
-                            <p>10/01/2020 16:15:22</p>
-                        </div>
-                    </div>
-                    <div class="message_left">
-                        <div class="message received">
-                            <p>Tutto fatto!</p>
-                            <p>10/01/2020 16:15:22</p>
-                        </div>
+                    <div class="message" v-for="message in contacts[activeIndex].messages" :class="message.status" > 
+                    <p>{{message.text}}</p>
+                    <p>{{message.date}}</p>
                     </div>
                 </div>
                 <div class="chat_write">

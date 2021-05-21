@@ -82,9 +82,15 @@ h3 {
     height: 70px;
     border-top: 1px solid #FAFAFA;
 }
-.contact:first-of-type {
+.contact:hover {
+    cursor: pointer;
+    background-color: #F3EEEA;
+}
+
+.active {
     background-color: #E9EBEB;
 }
+
 
 
 /* right section */
@@ -244,34 +250,32 @@ list-style-type: none;
 
 .sent {
     background-color: #D5F9BA;
+    float: right;
+    clear: both;
 }
 .received {
     background-color: white;
+    float: left;
+    clear: both;
 }
 
 .message {
-    height: 40px;
+    height: 46px;
     width: 250px;
     padding: 8px;
     margin-bottom: 5px;
     border-radius: 6px;
+    position: relative;
 }
 .message p {
     font-size: 12px;
+    text-align: left;
 }
 .message p:last-of-type {
     color: #B1B1B1;
     font-size: 9px;
     text-align: right;
-}
-
-.message_right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.message_left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
 }
