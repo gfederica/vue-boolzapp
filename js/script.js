@@ -139,6 +139,5 @@ var app = new Vue ({
            this.newMessage = "";
         }
     }
-
 }
 )
