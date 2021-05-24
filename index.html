@@ -89,7 +89,7 @@
                 </div>
                 <!-- /topbar dx -->
                 <div class="chat">
-                    <div class="message" v-for="message in contacts[activeIndex].messages" :class="message.status" > 
+                    <div class="message" v-for="message in contacts[activeIndex].messages" :class="message.status"> 
                     <p>{{message.text}}</p>
                     <p>{{message.date}}</p>
                     </div>
@@ -99,7 +99,7 @@
                         <i class="far fa-smile"></i>
                     </div>
                     <div class="write">
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" @keydown.enter="sendMessage(contacts[activeIndex])" v-model="newMessage">
                     </div>
                     <div class="audio">
                         <i class="fas fa-microphone"></i>

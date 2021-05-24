@@ -4,6 +4,11 @@
 // Milestone 2
 // Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all'interno del pannello della conversazione
 // Click sul contatto mostra la conversazione del contatto cliccato
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
+// Milestone 4
+// Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
 
 var app = new Vue ({
     el: "#root", 
@@ -93,7 +98,13 @@ var app = new Vue ({
                 ],
             },
         ],
-        activeIndex: 0
+        activeIndex: 0,
+        newMessage : "",
+        currentDate: ""
+    },
+    created : function () {
+        var d = new Date();
+        this.currentDate = dayjs().format('DD/MM/YYYY HH:mm:ss');
     },
     methods: {
         getImage: function (index) {
@@ -111,9 +122,21 @@ var app = new Vue ({
         setActive: function(index) {
             this.activeIndex = index;
         },
-        getLastAccess: function (index) {
-            let lastAccess = index.messages[index.messages.length - 1].date;
-            return lastAccess;
+        getLastAccess: function (contact) {
+            // Array di messaggi della chat
+            const messages = contact.messages;
+            const lastMessageIndex = messages.length-1;
+            const lastMessage = messages[lastMessageIndex];
+            // Data dell'ultimo messaggio
+            return lastMessage.date;
+        },
+        sendMessage: function (contact) {
+           contact.messages.push({
+               date: this.currentDate,
+               text: this.newMessage,
+               status: 'sent'
+           });
+           this.newMessage = "";
         }
     }
 
