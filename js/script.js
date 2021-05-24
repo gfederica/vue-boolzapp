@@ -100,7 +100,8 @@ var app = new Vue ({
         ],
         activeIndex: 0,
         newMessage : "",
-        currentDate: ""
+        currentDate: "",
+        randomAnswers: ["Ok","Va bene","Ricevuto", "👍👍"]
     },
     created : function () {
         var d = new Date();
@@ -136,6 +137,15 @@ var app = new Vue ({
                text: this.newMessage,
                status: 'sent'
            });
+           setTimeout ( () => {
+            const random = Math.floor((Math.random() * this.randomAnswers.length));
+            const randomAnswer = this.randomAnswers[random];
+            contact.messages.push ({
+            date: this.currentDate,
+            text: randomAnswer,
+            status: 'received'
+            })
+           }, 1000);
            this.newMessage = "";
         }
     }
