@@ -95,7 +95,47 @@
                     </div>
                 </div>
                 <div class="chat_write">
-                    <div class="emoticons">
+                    <div :class="(hideEmoticon)? 'hide_emoticon':'show_emoticon'">
+                        <ul class="emoticon-list">
+                            <li><i class="far fa-surprise"></i></li>
+                            <li><i class="far fa-smile-wink"></i></li>
+                            <li><i class="far fa-smile-beam"></i></li>
+                            <li><i class="far fa-sad-tear"></i></li>
+                            <li><i class="far fa-sad-cry"></i></li>
+                            <li><i class="far fa-meh-rolling-eyes"></i></li>
+                            <li><i class="far fa-meh-blank"></i></li>
+                            <li><i class="far fa-meh"></i></li>
+                            <li><i class="far fa-grin-wink"></i></li>
+                            <li><i class="far fa-grin-stars"></i></li>
+                            <li><i class="far fa-grin-squint-tears"></i></li>
+                            <li><i class="far fa-grin-hearts"></i></li>
+                            <li><i class="far fa-grin-beam"></i></li>
+                            <li><i class="far fa-grin-alt"></i></li>
+                            <li><i class="far fa-grin"></i></li>
+                            <li><i class="far fa-tired"></i></li>
+                            <li><i class="far fa-smile"></i></li>
+                            <li><i class="far fa-laugh-wink"></i></li>
+                            <li><i class="far fa-laugh-squint"></i></li>
+                            <li><i class="far fa-laugh-beam"></i></li>
+                            <li><i class="far fa-laugh"></i></li>
+                            <li><i class="far fa-kiss-wink-heart"></i></li>
+                            <li><i class="far fa-kiss-beam"></i></li>
+                            <li><i class="far fa-grin-tongue-wink"></i></li>
+                            <li><i class="far fa-grin-tears"></i></li>
+                            <li><i class="far fa-grin-beam-sweat"></i></li>
+                            <li><i class="far fa-grimace"></i></li>
+                            <li><i class="far fa-angry"></i></li>
+                            <li><i class="far fa-laugh"></i></li>
+                            <li><i class="far fa-kiss-wink-heart"></i></li>
+                            <li><i class="far fa-kiss-beam"></i></li>
+                            <li><i class="far fa-grin-tongue-wink"></i></li>
+                            <li><i class="far fa-grin-tears"></i></li>
+                            <li><i class="far fa-grin-beam-sweat"></i></li>
+                            <li><i class="far fa-grimace"></i></li>
+                        </ul>
+
+                    </div>
+                    <div class="emoticons" @click= "toggleEmoticon">
                         <i class="far fa-smile"></i>
                     </div>
                     <div class="write">

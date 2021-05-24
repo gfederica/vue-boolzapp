@@ -50,7 +50,10 @@ h3 {
     font-size: 16px;
 }
 
-
+i:hover{
+    cursor: pointer;
+    color: #8EDAFC;
+}
 
 
 /* left section */
@@ -188,6 +191,11 @@ list-style-type: none;
     border-right: 1px solid #E5E7E9;
     cursor: pointer;
 }
+.searchbar button:hover {
+    cursor: pointer;
+    background-color: #F3EEEA;
+    color:#8EDAFC;
+}
 .searchbar input {
     width: 85%;
     padding: 8px;
@@ -229,12 +237,14 @@ list-style-type: none;
 
 .chat_write {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 24px;
+    position: relative;
 }
 .write {
     width: 85%;
+    margin: 0 16px;
 }
 .write input {
     width: 100%;
@@ -246,6 +256,31 @@ list-style-type: none;
 .audio {
     color: #6B7376;
     font-size: 20px;
+}
+.show_emoticon {
+    position: absolute;
+    top: -130px;
+    left: 0px;
+    background-color: rgba(255, 255, 255, 0.6);
+    width: 97%;
+    height: 130px;
+    display: flex;
+    align-items: flex-start;
+    overflow-y: scroll;
+}
+.hide_emoticon {
+    display: none;
+}
+.show_emoticon ul {
+    font-size: 30px;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.show_emoticon ul li {
+    padding: 8px;
 }
 
 .sent {

@@ -102,7 +102,8 @@ var app = new Vue ({
         newMessage : "",
         currentDate: "",
         randomAnswers: ["Ok","Va bene","Ricevuto", "👍👍"],
-        searchInput: ""
+        searchInput: "",
+        hideEmoticon: true
     },
     created : function () {
         var d = new Date();
@@ -150,6 +151,7 @@ var app = new Vue ({
            this.newMessage = "";
         },
         filterItem: function (input) {
+        var input = input.charAt(0).toUpperCase() + input.slice(1);
             for (i = 0; i < this.contacts.length; i++) {
                 let element = this.contacts[i];
                 if (element.name.startsWith(input)) {
@@ -161,6 +163,9 @@ var app = new Vue ({
                 }
             }
             
+        },
+        toggleEmoticon: function () {
+            this.hideEmoticon = !this.hideEmoticon;
         }
     }
 }
