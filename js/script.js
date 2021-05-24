@@ -101,7 +101,8 @@ var app = new Vue ({
         activeIndex: 0,
         newMessage : "",
         currentDate: "",
-        randomAnswers: ["Ok","Va bene","Ricevuto", "👍👍"]
+        randomAnswers: ["Ok","Va bene","Ricevuto", "👍👍"],
+        searchInput: ""
     },
     created : function () {
         var d = new Date();
@@ -147,7 +148,22 @@ var app = new Vue ({
             })
            }, 1000);
            this.newMessage = "";
+        },
+        filterItem: function (input) {
+            for (i = 0; i < this.contacts.length; i++) {
+                let element = this.contacts[i];
+                if (element.name.startsWith(input)) {
+                   element.visible = true;
+                } else if (input == "") {
+                    element.visible = true;
+                } else {
+                   element.visible = false;
+                }
+            }
+            
         }
     }
 }
 )
+
+

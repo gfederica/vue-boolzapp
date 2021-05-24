@@ -49,14 +49,14 @@
                 <div class="left_search">
                     <div class="searchbar">
                         <button><i class="fas fa-search"></i></button>
-                        <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchInput" @keydown="filterItem(searchInput)">
                     </div>
                 </div>
                 <!-- /pannello ricerca contatti -->
                 <!-- sezione contatti -->
                 <div class="contacts">
                 <div class="contact" v-for="(contact, index) in contacts"
-                :class="(index == activeIndex)? 'active' : '' " @click="setActive(index)">
+                :class="(index == activeIndex)? 'active' : '' " @click="setActive(index)" v-show = "(contact.visible == true)">
                  <img :src="getImage(index)" alt="contact-pic">
                  <ul>
                      <li>{{contacts[index].name}}</li>
